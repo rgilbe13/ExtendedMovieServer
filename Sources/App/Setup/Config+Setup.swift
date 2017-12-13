@@ -1,4 +1,5 @@
 import FluentProvider
+import SQLite
 
 extension Config {
     public func setup() throws {
@@ -7,7 +8,7 @@ extension Config {
         Node.fuzzy = [Row.self, JSON.self, Node.self]
 
         try setupProviders()
-        try setupPreparations()
+        //try setupPreparations()
     }
     
     /// Configure providers
@@ -18,6 +19,6 @@ extension Config {
     /// Add all models that should have their
     /// schemas prepared before the app boots
     private func setupPreparations() throws {
-        preparations.append(Post.self)
+        preparations.append(Movie.self)
     }
 }
